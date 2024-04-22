@@ -54,9 +54,8 @@ function predictStats(event) {
   <!-- Modified form: added IDs and changed the event handler -->
   <form id="predictForm">
     <input class="w3-input w3-border" type="text" placeholder="Name" required id="playerName" name="Name">
-    <label for="years">Years to predict:</label>
+    <label for="yearsToPredict">Years to predict:</label>
     <select name="years" id="yearsToPredict">
-      <!-- Option values -->
       <option value="1">1</option>
       <option value="2">2</option>
       <option value="3">3</option>
@@ -64,16 +63,21 @@ function predictStats(event) {
       <option value="5">5</option>
     </select>
     <div>
-    <!-- Changed type to 'button' and added an onclick event listener -->
     <button class="w3-button w3-black w3-section" type="button" onclick="predictStats(event)">
       <i class="fa fa-paper-plane"></i> PREDICT
     </button>
-  </form>
+    </form>
+  </div>
   <!-- Div to display the result -->
   <div id="result"></div>
 </div>
 
 <!-- Rest of your HTML -->
+
+<!-- Footer -->
+<footer class="w3-center w3-black w3-padding-16">
+  <p>Powered by <a href="https://www.aws.amazon.com" title="AWS" target="_blank" class="w3-hover-text-green">w3.css</a></p>
+</footer>
 
 </body>
 </html>
