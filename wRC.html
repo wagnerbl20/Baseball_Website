@@ -74,6 +74,49 @@
   <p>Powered by <a href="https://www.aws.amazon.com" title="AWS" target="_blank" class="w3-hover-text-green">w3.css</a></p>
 </footer>
 
+
+ <script>
+        // Initialize AWS Amplify
+        Amplify.configure({
+            Auth: {
+                // Add Auth configuration if needed
+            },
+            API: {
+                endpoints: [
+                    {
+                        name: "Team1API",
+                        endpoint: "https://7usfpajfjd.execute-api.us-east-2.amazonaws.com/prod/Team1Function"
+                    }
+                ]
+            }
+        });
+
+        // Function to handle button click event
+        document.getElementById("predictButton").addEventListener("click", function() {
+            // Get values of name and years from the form
+            var name = document.getElementById("Name").value;
+            var years = document.getElementById("years").value;
+
+            // Call the Lambda function
+            Amplify.API.get("Team1API", "/Team1Function", {
+                queryStringParameters: {
+                    name: name,
+                    years: years
+                }
+            })
+            .then(response => {
+                console.log(response);
+                // Handle the response here
+            })
+            .catch(error => {
+                console.error(error);
+                // Handle errors here
+            });
+        });
+    </script>
+
+
+  
 </body>
 </html>
 
