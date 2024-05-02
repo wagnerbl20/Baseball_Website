@@ -11,7 +11,7 @@ function predictStats(event) {
     var playerName = document.getElementById('playerName').value;
     var yearsToPredict = document.getElementById('yearsToPredict').value;
 
-    fetch('https://a6210zoxg5.execute-api.us-east-2.amazonaws.com/Prod/player', {
+    fetch('https://a6210zoxg5.execute-api.us-east-2.amazonaws.com/Prod', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
